@@ -16,6 +16,7 @@ Change directory to the repo
   cd cardbored
 ```
 
+Install requirements (if already there just skip)
 ```bash
  python -m pip install -r requirements.txt
 ```
@@ -37,6 +38,8 @@ Change directory to the repo:
   cd cardbored
 ```
 
+
+Install requirements (if already there just skip)
 ```bash
   python3 -m pip install -r requirements.txt
 ```
