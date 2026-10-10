@@ -1,3 +1,3 @@
 # cardbored
 
-## A barebones notes app. 
+### A barebones notes app. 
