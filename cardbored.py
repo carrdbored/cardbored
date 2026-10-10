@@ -15,6 +15,8 @@ class Window(QMainWindow):
         layout=QHBoxLayout(box)
         buttonlayout=QVBoxLayout()
 
+        layout.setContentsMargins(12,12,12,12)
+
         new=QPushButton('[New file]')
         new.clicked.connect(self.new)
 
@@ -26,12 +28,14 @@ class Window(QMainWindow):
 
         fontsize= QComboBox()
         fontsize.addItems(['8','10','14','18','24','32','46','64','72','80','92','100','250','500','750','1000'])
+        fontsize.setCurrentText('14')
 
         about=QPushButton('[About]')
         about.clicked.connect(self.about)
         
         exit=QPushButton('[Exit]')
         exit.clicked.connect(self.exitbtn)
+
 
         buttonlayout.setSpacing(4)
         for button in (new,save,saveas,exit,about):
@@ -47,11 +51,14 @@ class Window(QMainWindow):
         buttonlayout.addWidget(fontsize)
         layout.addLayout(buttonlayout)
         layout.addWidget(self.lineedit)
+        buttonlayout.setSpacing(12)
+        buttonlayout.addStretch()
 
-        self.lineedit.setFont(QFont("Arial",8))
+        self.lineedit.setFont(QFont("Monospace",18))
+        self.lineedit.setPlaceholderText("Start typing...(plz)")
         fontsize.currentTextChanged.connect(self.sizechange)
         self.lineedit.textChanged.connect(self.changedw)
-        
+
 
     def new(self):
         question = QMessageBox.question(
@@ -142,10 +149,10 @@ class Window(QMainWindow):
             self.lineedit.setFont(QFont("Monospace",100))
 
         if item == '250':
-            self.lineedit.setFont(QFont("Arial",250))
+            self.lineedit.setFont(QFont("Monospace",250))
 
         if item == '500':
-            self.lineedit.setFont(QFont("Arial",500))
+            self.lineedit.setFont(QFont("Monospace",500))
 
         if item == '750':
             self.lineedit.setFont(QFont("Monospace",750))
@@ -153,8 +160,36 @@ class Window(QMainWindow):
         if item == '1000':
             self.lineedit.setFont(QFont("Monospace",1000))
             
+STYLE="""
+    QMainWindow, QWidget{
+        background-color: #1c1d1f;
+        color: #d9d9d9;
+        font-family: "Monospace";
+    }
+    QPushButton{
+        color: #dbdbdb;
+        border-radius:4px;
+        background-color: #2b2b2b;
+        font-size: 14px;
+    }
+    QPushButton:hover{
+        background-color: #404040;
+    }
+    QMessageBox QPushButton{
+        min-height:35px;
+        min-width: 80px;
+    }
+    QComboBox{
+        font-size:15px;
+    }
+    QComboBox:hover{
+        background-color:#303030;
+    }
+    """
+
 
 app = QApplication()
+app.setStyleSheet(STYLE)
 window= Window()
 window.show()
 app.exec()
