@@ -96,7 +96,7 @@ class Window(QMainWindow):
             "Text Files(*.txt);;All Files (*)"
         )
         if path:
-            with open(path,"w",encoding="utf.8") as file:
+            with open(path,"w",encoding="utf-8") as file:
                 file.write(self.lineedit.toPlainText())
             QMessageBox.information(
                 self,
