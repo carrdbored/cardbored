@@ -16,6 +16,10 @@ Change directory to the repo
   cd cardbored
 ```
 
+```bash
+ python -m pip install -r requirements.txt
+```
+
 Execute the file:
 ```bash
   python cardbored.py
@@ -33,6 +37,10 @@ Change directory to the repo:
   cd cardbored
 ```
 
+```bash
+  python3 -m pip install -r requirements.txt
+```
+
 Execute the file:
 ```bash
   python3 cardbored.py
@@ -42,10 +50,10 @@ Execute the file:
 
 ### Windows
 ```bash
-  git clone https://github.com/snowballero/cardbored; cd cardbored; python cardbored.py
+  git clone https://github.com/snowballero/cardbored; cd cardbored; python -m pip install -r requirements.txt; python cardbored.py
 ```
 
 ### Linux / macOS
 ```bash
-  git clone https://github.com/snowballero/cardbored; cd cardbored; python3 cardbored.py
+  git clone https://github.com/snowballero/cardbored && cd cardbored && python -m pip install -r requirements.txt && python3 cardbored.py
 ```
