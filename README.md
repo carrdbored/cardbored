@@ -58,5 +58,5 @@ Execute the file:
 
 ### Linux / macOS
 ```bash
-  git clone https://github.com/snowballero/cardbored && cd cardbored && python -m pip install -r requirements.txt && python3 cardbored.py
+  git clone https://github.com/snowballero/cardbored && cd cardbored && python3 -m pip install -r requirements.txt && python3 cardbored.py
 ```
